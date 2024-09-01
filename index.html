@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<h1>Etch A Sketch</h1>
+    <button>costume size</button>
+<div class="container"></div>
+<button id="clear">clear grid</button>
+<script>const btn=document.querySelector("button");
+    const container=document.querySelector(".container");
+    let squares='';
+    let size;
+    for(let i=1;i<=256;i++){
+     let  pix=document.createElement('div');
+     size=600/16;
+        
+        pix.setAttribute('style',`border:1px solid white;width:${size}px;height=${size}px;margin:0;box-sizing:border-box;`);
+        pix.className='pixel';
+        
+        container.appendChild(pix);
+        
+        }
+    btn.addEventListener('click',()=>{
+    squares=prompt('give the number of squares you want to have in each row (1=>100)');
+    if(squares!=''){
+    container.replaceChildren();
+    for(let i=1;i<=Number(squares)*Number(squares);i++){
+    pix=document.createElement('div');
+    size=600/Number(squares);
+        pix.className='pixel';
+        pix.setAttribute('style',`border:1px solid white;width:${size}px;height=${size}px;margin:0;box-sizing:border-box;`);
+    container.appendChild(pix);
+    }}
+    let pixels=document.querySelectorAll('.pixel');
+    pixels.forEach(pixel=>{
+    pixel.addEventListener('mouseover',()=>{
+        pixel.style.backgroundColor=`${getRandomRgbColor()}`;
+    })
+    })
+    })
+    
+    function getRandomRgbColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+    
+    
+      return `rgb(${r}, ${g},${b})`;
+    }
+    let pixels=document.querySelectorAll('.pixel');
+    pixels.forEach(pixel=>{
+    pixel.addEventListener('mouseover',()=>{
+        pixel.style.backgroundColor=`${getRandomRgbColor()}`;
+    })
+    })
+     const clrbtn=document.querySelector('#clear')  ;
+     clrbtn.addEventListener('click',()=>{
+        let pixels=document.querySelectorAll('.pixel');
+    pixels.forEach(pixel=>{
+    
+        pixel.style.backgroundColor=`white`;
+    
+    })
+    
+     }) </script>
+</body>
+</html>

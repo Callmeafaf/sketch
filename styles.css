@@ -1,0 +1,32 @@
+button{
+    width:100px;
+    height:40px;
+    background-color:rgb(67, 95, 44);
+    color:beige;
+    border:rgb(55, 78, 36);
+    border-radius:15px;
+    margin-left:47%;
+    font-family:sans-serif;
+    font-weight:bold;
+    margin-bottom:30px;
+    margin-top:30px;
+}
+.container{
+height:600px;
+width:600px;
+border:2px solid rgb(67, 95, 44);
+margin:auto;
+display:flex;
+flex-wrap: wrap;
+background-color:white;
+
+}
+h1{
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(67, 95, 44);
+    font-weight:bold;
+}
+body{
+    background-color:beige;
+}
